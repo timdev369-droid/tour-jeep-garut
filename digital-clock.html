@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="clock-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="clock-container">
+        <!-- Header -->
+        <header class="clock-header">
+            <h1><i class="fas fa-globe"></i> Global Digital Clock</h1>
+            <p>Current time in different time zones</p>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="btn btn-add" id="addClockBtn">
+                <i class="fas fa-plus"></i> Add Time Zone
+            </button>
+            <button class="btn btn-reset" id="resetBtn">
+                <i class="fas fa-redo"></i> Reset
+            </button>
+            <div class="format-toggle">
+                <label>
+                    <input type="checkbox" id="format24" checked>
+                    24-Hour Format
+                </label>
+            </div>
+        </div>
+
+        <!-- Clock Grid -->
+        <div class="clocks-grid" id="clocksGrid">
+            <!-- Clocks will be added here dynamically -->
+        </div>
+
+        <!-- Add Time Zone Modal -->
+        <div class="modal" id="timezoneModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add Time Zone</h2>
+                    <button class="close-btn" id="closeModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <input 
+                        type="text" 
+                        id="timezoneSearch" 
+                        placeholder="Search time zone (e.g., Asia/Jakarta, America/New_York)"
+                        class="search-input"
+                    >
+                    <div class="timezone-list" id="timezoneList">
+                        <!-- Timezones will be listed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="clock-footer">
+            <p>Powered by JavaScript & Intl API | Updated every second</p>
+        </footer>
+    </div>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>
